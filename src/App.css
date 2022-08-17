@@ -1,0 +1,34 @@
+.App {
+  text-align: center;
+  background-color: #828283;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input,textarea{
+ border: thin solid #dedede ;
+ border-radius: 0.25rem;
+ padding: 0.75rem;
+ margin:  1rem 1rem 0.4rem 1rem;
+ outline: none;
+ display: block;
+ width: 100%;
+ font-size: 1rem;
+ 
+/* background-color: transparent; */
+}
+textarea{
+  font-family: inherit;
+  resize: none;
+}
+.error{
+  border: 1px solid red;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
