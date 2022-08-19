@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ValidacionFormularios-React/static/css/main.d03acf0a.css",
-    "main.js": "/ValidacionFormularios-React/static/js/main.bc6d2116.js",
+    "main.css": "/ValidacionFormularios-React/static/css/main.73b94ea1.css",
+    "main.js": "/ValidacionFormularios-React/static/js/main.9998dedc.js",
     "static/js/787.a528e0b0.chunk.js": "/ValidacionFormularios-React/static/js/787.a528e0b0.chunk.js",
     "static/media/logo.svg": "/ValidacionFormularios-React/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/ValidacionFormularios-React/index.html",
-    "main.d03acf0a.css.map": "/ValidacionFormularios-React/static/css/main.d03acf0a.css.map",
-    "main.bc6d2116.js.map": "/ValidacionFormularios-React/static/js/main.bc6d2116.js.map",
+    "main.73b94ea1.css.map": "/ValidacionFormularios-React/static/css/main.73b94ea1.css.map",
+    "main.9998dedc.js.map": "/ValidacionFormularios-React/static/js/main.9998dedc.js.map",
     "787.a528e0b0.chunk.js.map": "/ValidacionFormularios-React/static/js/787.a528e0b0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d03acf0a.css",
-    "static/js/main.bc6d2116.js"
+    "static/css/main.73b94ea1.css",
+    "static/js/main.9998dedc.js"
   ]
 }
