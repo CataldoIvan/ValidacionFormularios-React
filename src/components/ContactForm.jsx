@@ -103,7 +103,7 @@ const ContactForm = () => {
           <input
             type="email"
             name="email"
-            placeholder="Escribe tu email"
+            placeholder="Escribe tu email(a este correo se envia form)"
             onChange={handleChange}
             value={form.email}
             onBlur={handleBlur}
