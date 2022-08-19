@@ -1,0 +1,42 @@
+
+#toasts{
+    position: fixed;
+    justify-content: center;
+    bottom: 40px;
+    right: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation-name: example;
+  animation-duration: 0.5s ;
+}
+
+@keyframes example {
+    0%   { bottom:0px;}
+    100% { bottom:40px; }
+  }
+.toast{
+    
+    width: 300px;
+    height: 70px;
+    border-radius: 5px;
+    /* margin: 0.5rem; */
+    color: #ffffff;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    
+}
+.success{
+    background-color: #4caf50;
+}
+
+.errort{
+    background-color: #ff5252;
+}
+
+.warning{
+    background-color: #ffc107;
+}

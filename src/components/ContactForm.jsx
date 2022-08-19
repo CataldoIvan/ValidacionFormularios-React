@@ -1,5 +1,9 @@
 import { useForm } from "../hook/useForm";
 import { FormMessageError } from "../components/FormMessageError/FormMessageError";
+import Loading from "./Loading/Loading";
+import swal from 'sweetalert';
+import Notification from "./Notification/Notification";
+
 
 const inicialForm = {
   name: "",
@@ -12,42 +16,65 @@ const validationsForm = (form, e) => {
   let errors = {};
   let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
   let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
-  let regexComments = /^.{1,255}$/;
+
 
   switch (e.target.name) {
     case "name":
       if (!form.name.trim()) {
         errors.name = `El campo ${e.target.name} es requerido`;
-        return errors;
+      } else if (!regexName.test(form.name.trim())) {
+        errors.name = `En el campo ${e.target.name} solo se permiten 'Numeros'`;
+      } else {
+        errors.name = null;
       }
 
       break;
 
     case "email":
-      if (!form.email) errors.email = `El campo ${e.target.name} es requerido`;
+      if (!form.email) {
+        errors.email = `El campo ${e.target.name} es requerido`;
+      } else if (!regexEmail.test(form.email.trim())) {
+        errors.email = `El ${e.target.name} debe ser valido`;
+      } else {
+        errors.email = null;
+      }
 
       break;
 
     case "subject":
-      if (!form.subject)
+      if (!form.subject) {
         errors.subject = `El campo ${e.target.name} es requerido`;
+      } else {
+        errors.subject = null;
+      }
 
       break;
 
     case "comments":
-      if (!form.comments)
+      if (!form.comments) {
         errors.comments = `El campo ${e.target.name} es requerido`;
+      } else if (form.comments.length > 255) {
+        errors.comments = `En el campo ${e.target.name} solo puede escribir 255 caracteres. Escribiste ${form.comments.length} caracteres`;
+      } else {
+        errors.comments = null;
+      }
 
       break;
 
     default:
+      {
+      }
       break;
   }
 
   return errors;
 };
+const noti=()=>{
+  return  swal("", "Nada que buscar", "warning");
+}
 
 const ContactForm = () => {
+
   const {
     form,
     errors,
@@ -60,7 +87,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <div>
+      <div className="container">
         <h2>Formulario de Contacto</h2>
         <form onSubmit={handleSubmit}>
           <input
@@ -101,11 +128,15 @@ const ContactForm = () => {
             onChange={handleChange}
             value={form.comments}
             onBlur={handleBlur}
+            placeholder={"Cant max 255 caracteres"}
             className={errors.comments ? "error" : null}
           ></textarea>
           {errors.comments && <FormMessageError msg={errors.comments} />}
-          <input type="submit" value={"Enviar"} />
+          <input disabled={loading}  type="submit" value={"Enviar"} />
         </form>
+        {loading && <Loading/>}
+   
+        {response.res &&<Notification type={response.type} msj={response.msj}/>}
       </div>
     </>
   );
